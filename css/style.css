@@ -1,4 +1,75 @@
-/* Kode * di bawah ini untuk mereset tampilan setiap web browser supaya seragam */
+
+ /*--------------------------------------------------------------
+ # Scroll top button
+ --------------------------------------------------------------*/
+ .scroll-top {
+   position: fixed;
+   visibility: hidden;
+   opacity: 0;
+   right: 15px;
+   bottom: -15px;
+   z-index: 99999;
+   background: var(--color-secondary);
+   width: 44px;
+   height: 44px;
+   border-radius: 50px;
+   transition: all 0.4s;
+ }
+ 
+ .scroll-top i {
+   font-size: 24px;
+   color: #fff;
+   line-height: 0;
+ }
+ 
+ .scroll-top:hover {
+   background: rgba(248, 90, 64, 0.8);
+   color: #fff;
+ }
+ 
+ .scroll-top.active {
+   visibility: visible;
+   opacity: 1;
+   bottom: 15px;
+ }
+ 
+ /*--------------------------------------------------------------
+ # Preloader
+ --------------------------------------------------------------*/
+ #preloader {
+   position: fixed;
+   inset: 0;
+   z-index: 999999;
+   overflow: hidden;
+   background: #fff;
+   transition: all 0.6s ease-out;
+ }
+ 
+ #preloader:before {
+   content: "";
+   position: fixed;
+   top: calc(50% - 30px);
+   left: calc(50% - 30px);
+   border: 6px solid #fff;
+   border-color: var(--color-primary) transparent var(--color-primary) transparent;
+   border-radius: 50%;
+   width: 60px;
+   height: 60px;
+   animation: animate-preloader 1.5s linear infinite;
+ }
+ 
+ @keyframes animate-preloader {
+   0% {
+     transform: rotate(0deg);
+   }
+ 
+   100% {
+     transform: rotate(360deg);
+   }
+ }
+ 
+ 
+ /* Kode * di bawah ini untuk mereset tampilan setiap web browser supaya seragam */
 
 * {
    box-sizing: border-box;
@@ -41,6 +112,7 @@ footer {
       akan otomatis diletakan di baris baru (tidak dipaksakan di satu baris)
    */
    flex-wrap: wrap;
+
 }
 
 
@@ -90,7 +162,7 @@ h1,h2 {
 
 a {
    /* menghilangkan garis bawah pada link */
-   text-decoration: none;
+   text-decoration: none !important;
 
    /* 
    color: adalah untuk mengganti warna tulisan.
@@ -526,10 +598,14 @@ footer {
 footer div.navigasi {
    margin-left: 20px;
    margin-right: auto;
+   color: #fff;
 }
 
 footer div.navigasi a {
    padding: 8px;
+   color: #fff;
+   justify-content: center;
+   
 }
 
 /* UNTUK kode RESPONSIF hari ke 3 tulis DI BAWAH sini */
